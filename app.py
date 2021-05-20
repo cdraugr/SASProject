@@ -18,6 +18,7 @@ def my_form_post():
     try:
         link = request.form['link']
         processed = get_all_by_link(link)
+        processed['text'] = processed['text'].replace('\n', '<br>')
         return render_template('response.html', data=processed)
     except ValueError as e:
         abort(403, e)
@@ -28,6 +29,7 @@ def parse_link():
     try:
         link = request.args['link']
         processed = get_all_by_link(link)
+        processed['text'] = processed['text'].replace('\n', '<br>')
         return render_template('response.html', data=processed)
     except ValueError as e:
         abort(403, e)
