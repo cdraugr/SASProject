@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Response</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Извлеченные данные</h1>
+    <p id="ID"><b>ID документа: </b> {{ data.ID }}</p>
+    <p id="link"><b>Сыллка на исочник: </b>{{ data.link }}</p>
+    <hr align="left" width="70%" size="5" color="#dddddd" />
+    <p><b>Полное название эмитента: </b>{{ data.full_name }}.</p>
+    <p><b>Сокращенное название эмитента: </b>{{ data.short_name }}.</p>
+    <p><b>Адрес: </b>{{ data.address }}.</p>
+    <p><b>ИНН: </b>{{ data.INN }}.</p>
+    <p><b>ОГРН: </b>{{ data.OGRN }}.</p>
+    <hr align="left" width="70%" size="5" color="#dddddd" />
+    <p><b>Дата собрания: </b>{{ data.date }}.</p>
+    <p><b>Форма собрания: </b>{{ data.meeting_form }}.</p>
+    <p><b>Наименование утвержденного аудитора: </b>{{ data.auditor_name }}.</p>
+    <p><b>ИНН утвержденного аудитора: </b>{{ data.auditor_INN }}.</p>
+    <hr align="left" width="70%" size="5" color="#dddddd" />
+    <p><b>Утвержденный состав совета директоров: </b>{{ data.directors }}.</p>
+    <p><b>Решение по выплате дивидендов: </b>{{ data.dividends }}.</p>
+    <hr align="left" width="70%" size="5" color="#dddddd" />
+    <h1>Текст сообщения:</h1>
+    <p>{{ data.text }}</p>
+    <hr align="left" width="70%" size="5" color="#dddddd" />
+</body>
+</html>

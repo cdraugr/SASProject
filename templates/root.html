@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Request</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+
+<body>
+
+    <div id="left">
+        <div class="left1">
+            <a href="#about">О проекте</a>
+        </div>
+        <div class="left1">
+            <a href="#outer">Парсинг по ссылке</a>
+        </div>
+        <div class="left1">
+            <a href="#choose">Выбрать ссылку</a>
+        </div>
+    </div>
+
+    <div id="about">
+         <h1>О проекте</h1>
+         <p> Цель данного проекта - разработать инструмент для парсинга html страниц и извлечению
+             из них текста решения. Было собрано более 300 решений общих собраний участков (акционеров)
+             с сайта <a href="https://www.e-disclosure.ru/">e-disclosure</a>. </p>
+         <p>Участники проекта:</p>
+         <ul>
+           <li><p>Кузецов Владимир</p></li>
+           <li><p>Лежанкина Александра</p></li>
+           <li><p>Школьник Мария</p></li>
+         </ul>
+    </div>
+
+    <hr align="center" width="100%" size="5" color="#dddddd" />
+
+    <div id="outer">
+        <div class="middle">
+            <div class="inner">
+                <h2>Вставьте ссылку на документ о раскрытии</h2>
+                <p> Здесь вы можете извлечь факты из любого документа о раскрытии. </p>
+                <p> Вставьте ссылку на документ о раскрытии в форму ниже: </p>
+                <form method="POST">
+                    <input name="link">
+                    <input type="submit">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <hr align="center" width="100%" size="5" color="#dddddd" />
+
+    <div id="choose">
+        <h2>Выберите из существующих документов</h2>
+        <p>
+            Здесь вы можете посмотреть факты, извлеченные из собранных нами документов о раскрытии.
+        </p>
+        {% for i in range(links|length) %}
+            <p>{{ i + 1 }}. <a href="{{ url_for('parse_link', link=links[i]) }}">{{ links[i] }}</a></p>
+        {% endfor %}
+    </div>
+
+
+</body>
+</html>
+
