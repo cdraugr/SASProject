@@ -25,7 +25,7 @@
     <p><b>Решение по выплате дивидендов: </b>{{ data.dividends }}.</p>
     <hr align="left" width="70%" size="5" color="#dddddd" />
     <h1>Текст сообщения:</h1>
-    <p>{% autoescape false %} {{ data.text }} {% endautoescape %}</p>
+    <p>{% autoescape false %} {{ data.text.replace("\n", "<br>") }} {% endautoescape %}</p>
     <hr align="left" width="70%" size="5" color="#dddddd" />
 </body>
 </html>
