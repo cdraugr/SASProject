@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template, abort
 
-from text_analytics import get_all_by_link
-from utils import parse_links_from_json
+from srcs.text_analytics import get_all_by_link
+from srcs.utils import parse_links_from_json
 
 
 app = Flask(__name__)

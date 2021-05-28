@@ -1,7 +1,7 @@
 import pandas as pd
 from tqdm import tqdm
 
-from text_analytics import get_all_by_link
+from srcs.text_analytics import get_all_by_link
 
 
 def main():

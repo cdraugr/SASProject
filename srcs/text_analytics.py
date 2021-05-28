@@ -4,7 +4,7 @@ import typing as tp
 import requests
 from bs4 import BeautifulSoup
 
-import config
+from srcs import config
 
 
 def get_text(link: str) -> str:

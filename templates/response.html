@@ -7,8 +7,8 @@
 </head>
 <body>
     <h1>Извлеченные данные</h1>
-    <p id="ID"><b>ID документа: </b> {{ data.ID }}</p>
-    <p id="link"><b>Сыллка на исочник: </b>{{ data.link }}</p>
+    <p id="ID"><b>ID документа: </b> {{ data.ID }}.</p>
+    <p id="link"><b>Сыллка на исочник: </b><a href={{ data.link }}>{{ data.link }}</a></p>
     <hr align="left" width="70%" size="5" color="#dddddd" />
     <p><b>Полное название эмитента: </b>{{ data.full_name }}.</p>
     <p><b>Сокращенное название эмитента: </b>{{ data.short_name }}.</p>
