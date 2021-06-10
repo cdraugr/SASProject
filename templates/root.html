@@ -58,7 +58,7 @@
             Здесь вы можете посмотреть факты, извлеченные из собранных нами документов о раскрытии.
         </p>
         {% for i in range(links|length) %}
-            <p>{{ i + 1 }}. <a href="{{ url_for('parse_link', link=links[i]) }}">{{ links[i] }}</a></p>
+            <p>{{ i + 1 }}. <a target="_blank" rel="noopener noreferrer" href="{{ url_for('parse_link', link=links[i]) }}">{{ links[i] }}</a></p>
         {% endfor %}
     </div>
 
